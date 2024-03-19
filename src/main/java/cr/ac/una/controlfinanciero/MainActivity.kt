@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
            insertEntity()
         }
 
+        adapter = MovimientoAdapter(this, movimientoController.movimientos)
+        val list = findViewById<android.widget.ListView>(R.id.listaMovimientos)
+        list.adapter = adapter
 
         activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             if(it.resultCode == RESULT_OK){
